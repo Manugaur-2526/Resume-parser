@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Resume Parser | Modern UI</title>
+
+<link rel="stylesheet" href="style.css" />
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.6.347/pdf.min.js"></script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+
+<body>
+
+
+<nav class="navbar">
+  <div class="logo">ResumeAI</div>
+  <ul class="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#parser">Parser</a></li>
+  </ul>
+  
+  <div class="auth-btns">
+  <button class="nav-btn login-btn" onclick="openModal('loginModal')">Login</button>
+  <button class="nav-btn signup-btn" onclick="openModal('signupModal')">Sign Up</button>
+</div>
+</nav>
+
+
+<section id="home" class="section hero">
+  <h1 class="hero-title">Welcome to the Resume Parser</h1>
+  <p>Upload your resume and extract structured information instantly</p>
+</section>
+
+
+
+<section id="work" class="section">
+  <h2>How Resume Parsing Works</h2>
+
+  <div class="card-grid">
+    <div class="card"> Upload Resume (PDF / TXT)</div>
+    <div class="card"> Read & Extract Text</div>
+    <div class="card"> Analyze Content</div>
+    <div class="card"> Extract Skills & Details</div>
+    <div class="card"> Download Parsed Output</div>
+  </div>
+</section>
+
+
+  <section id="parser" class="section parser-section">
+  <h2 class="parser-title">Resume Parser</h2>
+
+  <div class="upload-box modern-upload">
+    <input type="file" id="resumeFile" accept=".pdf,.txt">
+
+    <div class="btn-group">
+      <button class="primary-btn" onclick="parseResume()">Extract Resume</button>
+      <button class="secondary-btn" onclick="downloadPDF()">Download PDF</button>
+    </div>
+  </div>
+  <div class="progress-container" id="progressContainer">
+  <div class="progress-bar" id="progressBar"></div>
+</div>
+</section>
+
+
+  
+  <div id="outputCards" class="card-grid"></div>
+</section>
+
+
+<div class="modal" id="loginModal">
+  <div class="auth-card">
+    <h2>Welcome Back</h2>
+    <p>Login to your account</p>
+
+    <input id="loginEmail" type="email" placeholder="Email address">
+    <input id="loginPass" type="password" placeholder="Password">
+
+    <button class="auth-action" onclick="login()">Login</button>
+    <span class="close" onclick="closeModal()">×</span>
+  </div>
+</div>
+
+
+<div class="modal" id="signupModal">
+  <div class="auth-card">
+    <h2>Create Account</h2>
+    <p>Sign up to get started</p>
+
+    <input id="signupEmail" type="email" placeholder="Email address">
+    <input id="signupPass" type="password" placeholder="Password">
+
+    <button class="auth-action" onclick="signup()">Sign Up</button>
+    <span class="close" onclick="closeModal()">×</span>
+  </div>
+</div>
+
+<footer>© Resume Parser Project | Modern UI</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
